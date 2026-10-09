@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Development Template</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <li class="logo">WEB DEV</li>
+            <li><a href="#web">Web Technology</a></li>
+            <li><a href="#program">C Programming</a></li>
+            <li><a href="#course">Courses</a></li>
+        </ul>
+        <div class="rightNav">
+            <input type="text" id="search" placeholder="Search...">
+            <button class="btn btn-sm" onclick="searchContent()">Search</button>
+        </div>
+    </nav>
+
+    <section class="firstsection" id="web">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big">Web Technology</h1>
+                <p class="text-small">
+                    HTML stands for HyperText Markup Language.
+                    It is used to design web pages using a markup
+                    language. HTML defines the structure of web
+                    pages and works together with CSS to create
+                    attractive websites.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="secondsection" id="program">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big">C Programming</h1>
+                <p class="text-small">
+                    C is a procedural programming language.
+                    It was developed by Dennis Ritchie.
+                    Its main features include low-level memory
+                    access, simple keywords, and efficiency.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="course">
+        <div class="paras">
+            <h1 class="text-big">Java</h1>
+            <p class="text-small">
+                Java is an object-oriented programming language.
+                Java code is compiled into bytecode, which runs
+                on the Java Virtual Machine (JVM).
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500" alt="Programming laptop">
+        </div>
+    </section>
+
+    <footer class="background">
+        <p class="text-footer">
+            Copyright © 2026 - All rights reserved
+        </p>
+    </footer>
+
+    <script>
+        function searchContent() {
+            const query = document.getElementById("search").value.toLowerCase();
+            if (!query.trim()) return;
+            const sections = document.querySelectorAll("section");
+            for (const section of sections) {
+                if (section.textContent.toLowerCase().includes(query)) {
+                    section.scrollIntoView({behavior: "smooth"});
+                    return;
+                }
+            }
+            alert("No matching content found.");
+        }
+    </script>
+</body>
+</html>
